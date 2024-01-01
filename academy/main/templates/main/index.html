@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Together Academy</title>
+    <!-- Include Bootstrap CSS (Assuming you have Bootstrap in your project) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {% comment %} <style>
+        navbar {
+            background-color: #f8e71c;
+        }
+
+        footer {
+            background-color: #d4edda;
+        }
+    </style> {% endcomment %}
+</head>
+<body>
+
+    <div class="modal fade" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="contactUsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactUsModalLabel">Contact Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>For any inquiries, feel free to reach out to us:</p>
+                    <p>Phone: 8438252726</p>
+                    <p>Email: successtogetheracademsta@gmail.com</p>
+                    <p>Quotes: "Education is the key to success."</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="aboutCoursesModal" tabindex="-1" role="dialog" aria-labelledby="aboutCoursesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutCoursesModalLabel">About Our Courses</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome to Success Together Academy! We offer a variety of courses to help you achieve success in your career. Our courses include:</p>
+                    <ul>
+                        <li>TNPSC Group 1</li>
+                        <li>TNPSC Group 4</li>
+                        <li>TNUSRP SI Open Quota</li>
+                        <li>BC Exam</li>
+                        <li>Spoken Hindi Class</li>
+                    </ul>
+                    <p>Our experienced instructors are dedicated to providing quality education and helping you excel in your exams. Join us on the path to success!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ... (previous HTML code) ... -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Success Together Academy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutCoursesModal">About Our Courses</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h5 class="mb-4">Book Your Courses</h1>
+        <form method="post" action="{% url 'index' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="district">District:</label>
+                <input type="text" class="form-control" id="district" name="district" required>
+            </div>
+            <div class="form-group">
+                <label for="qualification">Qualification:</label>
+                <input type="text" class="form-control" id="qualification" name="qualification" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsapp_number">WhatsApp Number:</label>
+                <input type="text" class="form-control" id="whatsapp_number" name="whatsapp_number" required>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <input type="text" class="form-control" id="occupation" name="occupation" required>
+            </div>
+            <div class="form-group">
+                <label for="preferred_exam">Preferred Exam:</label>
+                <select class="form-control" id="preferred_exam" name="preferred_exam" required>
+                    <option value="tnpsc_group1">TNPSC Group 1</option>
+                    <option value="tnpsc_group4">TNPSC Group 4</option>
+                    <option value="tnusrp_si">TNUSRP SI Open Quota</option>
+                    <option value="bc_exam">BC Exam</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Success Together Academy. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Include Bootstrap JS and jQuery (Assuming you have Bootstrap in your project) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
